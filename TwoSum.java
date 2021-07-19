@@ -25,4 +25,20 @@ public class TwoSum {
         return new int[]{};
     }
 
+  public int[] twoSumSorted(int[] nums, int target) {
+    // Time: O(n) Space: O(1)
+    int i = 0, j = nums.length - 1;
+    while(i < j) {
+        if(nums[i] + nums[j] == target) {
+            // Target found
+            return new int[] {i, j};
+        } else if(nums[i] + nums[j] > target) {
+            j--;
+        } else {
+            i++;
+        }
+    }
+    return new int[]{};
+   }
+  
 }
